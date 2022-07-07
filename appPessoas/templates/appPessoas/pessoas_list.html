@@ -1,0 +1,32 @@
+{% extends 'appMainCRUD/base.html' %}
+
+{% block content %}
+<a href="{% url 'pessoas.novo' %}">Novo</a>
+<table>
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Ativa</th>
+        </tr>
+        <tbody>
+            {% for Pessoas in object_list %}
+            <tr>
+                <td>{{Pessoas.nome_completo}}</td>
+                <td>{{Pessoas.data_nascimento|date:"SHORT_DATE_FORMAT"}}</td>
+                <td>
+                    {%if pessoa.ativa %}
+                    Sim
+                    {% else %}
+                    Não   
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+
+</table>
+{% endblock content %}
+
