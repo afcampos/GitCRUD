@@ -5,5 +5,5 @@ from .models import Pessoas
 class PessoasForm(forms.ModelForm):
     class Meta:
         model = Pessoas
-        fields = ['nome_completo','data_nascimento','ativa']
+        fields = ['nome_completo', 'data_nascimento', 'ativa']
 
